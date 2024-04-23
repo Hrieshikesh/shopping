@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const port = process.env.PORT || 9090; 
 app.use(express.static(__dirname+'/public'));
 
 app.get('/index.html',(req,res)=>{
@@ -22,4 +22,4 @@ app.get('/email.html',(req,res)=>{
     res.sendFile(__dirname+'/email.html');  
 })
 
-app.listen(9090);
+app.listen(port);
